@@ -101,7 +101,9 @@
 \autor{$author$}
 \data{$date$}
 \local{$local$}
+$if(orientador)$
 \orientador{$orientador$}
+$endif$
 \coorientador{$coorientador$}
 \instituicao{%
   $instituicao$

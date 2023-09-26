@@ -1,0 +1,11 @@
+# Mercado de trabalho
+
+Físicos teóricos encontram oportunidades de emprego em diversos setores, incluindo universidades, instituições de pesquisa, empresas de tecnologia e órgãos governamentais. Suas funções podem abranger áreas de ensino, pesquisa e consultoria.
+
+O mercado de trabalho para físicos teóricos é altamente competitivo, porém, para aqueles com as habilidades e experiência necessárias, existem oportunidades disponíveis.
+
+No Brasil, a principal esfera de atuação para físicos teóricos é o ambiente acadêmico, compreendendo universidades e institutos de pesquisa. Nestes locais, eles se dedicam à pesquisa científica, publicam artigos em revistas especializadas, orientam alunos de graduação e pós-graduação, ministram aulas e participam de eventos científicos. Algumas instituições notáveis que empregam físicos teóricos no país incluem o Instituto de Física Teórica da Universidade Estadual Paulista (IFT-UNESP), o Centro Brasileiro de Pesquisas Físicas (CBPF), o Instituto de Física da Universidade de São Paulo (IFUSP), o Instituto de Física da Universidade Federal do Rio de Janeiro (IF-UFRJ), o Instituto de Física Gleb Wataghin da Universidade Estadual de Campinas (IFGW-UNICAMP), e o Centro de Ciências Naturais e Humanas da Universidade Federal do ABC (CCNH-UFABC), entre outros.
+
+Além do meio acadêmico, físicos teóricos podem também encontrar oportunidades em indústrias e empresas inovadoras. Nesses contextos, eles aplicam seus conhecimentos e habilidades para resolver problemas práticos relacionados a áreas como tecnologia, energia, informação, saúde e meio ambiente. Algumas das áreas de atuação na indústria incluem computação quântica, inteligência artificial, nanotecnologia, biotecnologia, materiais avançados, óptica e fotônica, criptografia quântica, entre outras.
+
+Os salários médios de físicos teóricos no Brasil variam de acordo com o nível de formação, experiência profissional, instituição empregadora e campo de atuação. De acordo com o \cite{guiadacarreira}, um professor universitário com doutorado em física pode receber salários que variam entre R$ 5 mil e R$ 15 mil por mês, enquanto um pesquisador em uma empresa privada pode ganhar entre R$ 8 mil e R$ 20 mil por mês.

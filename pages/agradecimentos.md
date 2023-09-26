@@ -1,3 +1,3 @@
 # Agradecimentos
 
-No entanto, não podemos esquecer que o aumento do diálogo entre os diferentes setores produtivos promove a alavancagem das posturas dos órgãos dirigentes com relação às suas atribuições.
+Gostaria de expressar meus sinceros agradecimentos a todos que contribuíram para o sucesso desta pesquisa. Este projeto representou uma jornada fascinante no mundo da física teórica e foi enriquecido por inúmeras pessoas e recursos.

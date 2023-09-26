@@ -2,46 +2,64 @@
 #===============================================#
 # Informações principais
 #===============================================#
-instituicao: Universidade/Faculdade do Brasil
-author: Nome do autor
-title: Título do trabalho
-local: Cidade - UF
-date: '2019'
-titulacao: Minha-titulação
-curso: Meu-curso
-programa: Programa de Pós-Graduação em XXX
-area_de_concentracao: Computação
-linha_de_pesquisa: ''
+instituicao: Instituto Federal de Sergipe
+author: Reinan Gabriel Dos Santos Souza
+title: 'Introdução à Profissão de Físico Teórico'
+local: Lagarto - SE
+date: '2023'
+titulacao: Bacharel
+curso: Sistemas de informação
+programa: Programa de Pós-Graduação em 2023
+area_de_concentracao: ''
+linha_de_pesquisa: 'Física teórica'
 coorientador: ''
-orientador: Nome-do-Orientador
-avaliador2: Nome-do-Prof-Convidado2
+orientador: ''
+avaliador2: ''
 aprovacao_dia: '1'
-avaliador1: Nome-do-Prof-Convidado1
+avaliador1: ''
 avaliador3: ''
 #===============================================#
 # Configurações de textos
 #===============================================#
 resumo: '@import(pages/resumo.md)'
-resumen: '@import(pages/resumen.md)'
-resume: '@import(pages/resume.md)'
 abstract_texto: '@import(pages/abstract.md)'
 proposito: '@import(pages/proposito.md)'
 agradecimentos: '@import(pages/agradecimentos.md)'
-dedicatoria: '@import(pages/dedicatoria.md)'
+resumen: ''
+resume: ''
+dedicatoria: ''
 epigrafe: ''
 capa_pdf_caminho: ''
 #===============================================#
 # Informações importantes
 #===============================================#
 siglas:
-  - s: ABNT
-    d: Associação Brasileira de Normas Técnicas
+  - s: USP
+    d: Universidade de São Paulo
+  - s: UNICAMP
+    d: Universidade Estadual de Campinas
+  - s: INPE
+    d: Instituto Nacional de Pesquisas Espaciais
+  - s: INFN
+    d: Instituto Nacional de Física Nuclear
+  - s: CBPF
+    d: Centro Brasileiro de Pesquisas Físicas
+  - s: IFT-UNESP
+    d: Instituto de Física Teórica da Universidade Estadual Paulista
+  - s: IFUSP
+    d: Instituto de Física da Universidade de São Paulo
+  - s: IF-UFRJ
+    d: Instituto de Física da Universidade Federal do Rio de Janeiro
+  - s: IFGW-UNICAMP
+    d: Instituto de Física Gleb Wataghin da Universidade Estadual de Campinas
+  - s: CCNH-UFABC
+    d: Centro de Ciências Naturais e Humanas da Universidade Federal do ABC
 simbolos:
 graduacao: true
 especializacao: false
 mestrado: false
 doutorado: false
-tipo_do_trabalho: Monografia
+tipo_do_trabalho: "Artigo acadêmico"
 incluir_ficha_catalografica: false
 folha_de_aprovacao: false
 projeto: true
@@ -53,8 +71,8 @@ lista_ilustracoes: false
 lista_quadros: false
 lista_tabelas: false
 referencias_caminho: config/referencias.bib
-palavras_chave: 'Markup Language, Markdown, Normas da ABNT, Latex, Limarka'
-keywords: ''
+palavras_chave: 'Física teórica, Formação acadêmica, Carreira em física, Pesquisa científica, Ensino de física, Cientistas brasileiros e Físicos teóricos brasileiros'
+keywords: 'Theoretical physics, Academic training, Career in physics, Scientific research, Physics teaching, Brazilian scientists and Brazilian theoretical physicists'
 palabras_clave: ''
 mots_cles: ''
 #===============================================#
@@ -62,7 +80,7 @@ mots_cles: ''
 # Link: https://github.com/ReinanHS/limarka-render-html
 #===============================================#
 page_render:
-  published_time: '2022-06-28T18:26:24-03:00'
+  published_time: '2023-09-11T18:26:24-03:00'
   instituicao_website: 'https://www.ifs.edu.br/'
   social_networks:
     facebook: reinangabriel

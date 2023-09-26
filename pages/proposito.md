@@ -1,3 +1,3 @@
 # Propósito
 
-O empenho em analisar a revolução dos costumes exige a precisão e a definição dos procedimentos normalmente adotados.
+Esta pesquisa foi empreendida como parte dos requisitos para a apresentação de um seminário sobre o tema. Conforme as diretrizes, esta pesquisa deve ter uma extensão de 3 a 5 páginas.
