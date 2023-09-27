@@ -3,6 +3,7 @@ name: Container Workflow
 on:
   push:
     branches: [ "master" ]
+   
 jobs:
   build-limarka:
     runs-on: ubuntu-latest
@@ -28,6 +29,52 @@ jobs:
           path: dist
           retention-days: 1
 
+  build-marp:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Ensure build dir exists
+        run: mkdir -p build
+
+      - name: Copy images directory (if exists)
+        run: if [[ -d imagens ]]; then cp -R imagens build/imagens; fi
+
+      - name: Marp Build (README)
+        uses: docker://marpteam/marp-cli:v3.3.0
+        with:
+          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css -o build/slide.html
+        env:
+          MARP_USER: root:root
+          LANG: "pt_BR.UTF-8"
+
+      - name: Marp Build (README.pdf)
+        uses: docker://marpteam/marp-cli:v3.3.0
+        with:
+          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pdf
+        env:
+          MARP_USER: root:root
+          LANG: "pt_BR.UTF-8"
+
+      - name: Marp Build (README.pptx)
+        uses: docker://marpteam/marp-cli:v3.3.0
+        with:
+          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pptx
+        env:
+          MARP_USER: root:root
+          LANG: "pt_BR.UTF-8"
+
+      - name: Archive marp artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: marp-limarka
+          path: build
+          retention-days: 1
+
   build-page:
     needs: build-limarka
     runs-on: ubuntu-latest
@@ -38,6 +85,15 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-limarka
+      - name: Download build Marp
+        uses: actions/download-artifact@v3
+        with:
+          name: marp-limarka
+          path: build-slide
+      - name: Import Marp Files
+        run: mv build-slide/* dist/
+      - name: Debug
+        run: ls
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
@@ -52,6 +108,7 @@ jobs:
             cp data/configuracao.yaml .
             mkdir -p source/assets/files/
             cp data/xxx-* source/assets/files/
+            ls 
             cp data/pages/*.md source/_pages
             vendor/bin/jigsaw build
             mkdir -p data/build
@@ -62,6 +119,7 @@ jobs:
           name: build-page
           path: build
           retention-days: 1
+
   deploy:
     needs: build-page
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -69,12 +127,15 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-      - name: Download build
+      - name: Download build Limark
         uses: actions/download-artifact@v3
         with:
           name: build-page
           path: build
-      - name: Deploy 🚀
+      - name: Deploy production
+        if: ${{ github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # The folder the action should deploy.
+          branch: gh-pages
+          folder: ./build/
+          clean-exclude: pr-preview/
