@@ -1,150 +1,71 @@
 <div align="center">
 
- ![limarka-template-tcc-logo](https://user-images.githubusercontent.com/28494067/192121768-6d86c159-29bb-4df1-b84b-7e8e65569c9e.png)
- # Limarka Template TCC
+<img src="./imagens/albert-einstein.png" alt="Capa" width="20%" />
+
+ # CLFI - Físico Teórico
  
 </div>
 
-Esse repositório é responsável por contém os arquivos do esqueleto (modelo) para iniciar a escrita de um trabalho acadêmico com o [limarka](https://github.com/abntex/limarka). Além disso, este projeto contém várias outras novidades que facilitam a escrita de um trabalho acadêmico.
+Este repositório contém todos os arquivos relacionados à apresentação de um seminário sobre física teórica para a disciplina de Introdução à Física. Aqui, você encontrará tanto a parte escrita quanto os recursos da apresentação.
 
-Provavelmente se você chegou a utilizar o [abntex/trabalho-academico-limarka](https://github.com/abntex/trabalho-academico-limarka), você encontrou problemas ao configurar o ambiente. Ao usar esse modelo vários problemas serão solucionados.
+## Resumo
 
-## Sumário
+Nossa pesquisa oferece uma visão abrangente do campo da física teórica, abordando tanto as opções educacionais disponíveis para estudantes de física quanto as atividades envolvidas na carreira de um físico teórico. Começaremos delineando as diferentes trilhas de formação disponíveis, destacando as diferenças entre os programas de licenciatura e bacharelado. Em seguida, detalharemos o percurso educacional necessário, que inclui cursos de graduação, mestrado e doutorado em física teórica.
 
-<details open>
-<summary>Principais informações</summary>
+Uma parte significativa deste estudo se concentra nas atividades cotidianas de um físico teórico, que abrangem pesquisa, experimentação, análise de dados, publicação e ensino. Exploraremos como essas atividades se entrelaçam para formar a rotina de um físico teórico, destacando a importância da pesquisa independente e da colaboração para o progresso do conhecimento científico.
 
-* [O que esse modelo tem de diferente?](#head-intro)
-* [Como instalar e executar o modelo](#head-instalar)
-* [Documentação completa](#head-documentacao)
-* [Tecnologias e ferramentas utilizadas](#head-tecnologias)
-* [Licença](#head-licenca)
-* [Créditos](#head-creditos)
+No contexto brasileiro, destacaremos desafios adicionais que afetam a pesquisa científica, como limitações de financiamento, infraestrutura insuficiente e mudanças nas políticas públicas relacionadas à ciência e tecnologia. No entanto, ressaltaremos a dedicação e a paixão dos físicos teóricos brasileiros que continuam a contribuir significativamente para a física global, apesar desses obstáculos.
 
-</details>
+Nossa pesquisa concluirá enfatizando o papel fundamental dos físicos teóricos na busca pelo entendimento dos princípios fundamentais da natureza. Eles não apenas desvendam os mistérios do universo, mas também impulsionam o desenvolvimento de tecnologias inovadoras e sistemas que beneficiam a sociedade. A física teórica é uma disciplina fascinante e desafiadora que transcende fronteiras e molda o futuro do conhecimento científico. Os físicos teóricos são arquitetos do conhecimento, exploradores das fronteiras do entendimento humano e educadores que inspiram futuras gerações a continuar essa busca incessante por respostas.
 
-## O que esse modelo tem de diferente? <a name="head-intro"></a>
+## Visualização dos Arquivos
 
-Durante a criação deste modelo, novos recursos foram adicionados para ajudá-lo a escrever um trabalho acadêmico com maior facilidade.
-Os principais recurso são:
+Para visualizar os arquivos gerados durante o processo de automatização, acesse [este link](https://github.com/ReinanHS/clfi-fisico-teorico/tree/gh-pages).
 
-- Criação de uma ambiente utilizado `docker-composer`.
-- Criação do script `limarka-help` que vai lhe ajudar a fazer o build dos arquivos.
-- Criação de jobs no Github Action para publicar seus trabalhos e disponibilizar no seu repositório.
-- Melhorias na estrutura de arquivos.
-- Adicionar nova funcionalidade para importar arquivos markdown.
+## Geração Manual de Arquivos
 
-Veja esse vídeo com uma introdução rápida sobre esse template: [Limarka: como escrever um tcc em markdown](https://youtu.be/zuw0Fo1la2U)
+Para gerar os arquivos manualmente, siga as instruções abaixo:
 
-## Como instalar e executar o modelo <a name="head-instalar"></a>
-
-A maneira recomendada de instalar este projeto é seguindo estas etapas:
-
-1. Realize o clone do projeto para a sua máquina
+1. Execute o comando abaixo para abaixar as informações do tema do slide:
 
 ```shell
-git clone https://github.com/ReinanHS/limarka-template-tcc.git
+wget https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css
 ```
 
-2. Acessar as pastas do projeto
-3. Certifique se de ter o [docker](#head-docker) e [make](https://www.youtube.com/watch?v=a3ejgWLqelQ) instalado em sua maquina
-4. Execute os seguintes comandos:
+2. Execute o comando abaixo para gerar o slide em PDF:
 
 ```shell
-cd limarka-template-tcc 
-make up
+docker run --rm --init -v "${PWD}:/home/marp/app/" -e LANG="pt_BR.UTF-8" marpteam/marp-cli slide-deck.md --theme academic.css --allow-local-files -o build/README.pdf
 ```
 
-**Atenção**: Se você não tiver o comando `make` instalado em sua máquina, você pode rodar o comando:
-`docker-compose up`
-
-5. Você deverá abrir outro terminal e executar o seguinte comando:
+3. Execute o comando abaixo para gerar o texto da apresentação em PDF:
 
 ```shell
-make build-doc
+docker run --rm --init -v "${PWD}:/usr/src/trabalho" reinanhs/limarka-help:1.0.0 bin/bash -c "limarka-help"
 ```
 
-Após fazer e execução desse comando será gerado uma pasta `build` com o arquivo compilado do seu projeto.
 
-## Documentação completa <a name="head-documentacao"></a>
+## Tecnologias e Ferramentas Utilizadas
 
-Veja a documentação sobre esse modelo acessando esse [link](https://github.com/ReinanHS/limarka-template-tcc/wiki)
+Principais tecnologias e ferramentas usadas neste projeto:
 
-## Tecnologias e ferramentas utilizadas <a name="head-tecnologias"></a>
-
-As principais tecnologias usadas foram:
-
-- [Limarka](#head-limarka)
-- [Limarka Render HTML](#head-limarka-render)
-- [Docker](#head-docker)
-- [Github Action](#head-github-action)
-
-### O que é o Limarka <a name="head-limarka"></a>
-
-> O limarka é uma ferramenta de comando de linha (sem interface gráfica) que gera PDFs em conformidade com as Normas da ABNT a partir de textos escritos em Markdown.
-
-Essa é a ferramenta base para esse projeto. Você poderá encontrar uma vasta documentação falando sobre essa ferramenta clicando nesse [link](https://github.com/abntex/limarka/wiki).
-
-### O que é o Docker <a name="head-docker"></a>
-
-> O Docker é uma plataforma open source que facilita a criação e administração de ambientes isolados. Ele possibilita o empacotamento de uma aplicação ou ambiente dentro de um container, se tornando portátil para qualquer outro host que contenha o Docker instalado.
-
-Com o Docker você não presissar se prebupar em configurar um ambiente. Todas essas configurações já foram feitas e estaõ no docker. 
-
-**Atenção**: Para a utilizar esse repositório é recomendado fazer a instalação do docker em sua máquina, veja abaixo algumas links de ajuda:
-
-- [Docker Desktop para Mac](https://youtu.be/ktNYPv6kfVk)
-- [Docker Desktop para Windows](https://youtu.be/05YN8F8ajBc)
-- [Docker Desktop para Linux](https://youtu.be/q4ZK6IJCS6Q)
-
-### O que é o Limarka Render HTML <a name="head-limarka-render"></a>
-
-Esta é uma ferramenta para ajudá-lo a disponibilizar seu trabalho acadêmico em uma página da web. Com esta ferramenta é possível fazer diversas customizações. Além disso, você pode compartilhar o link com outras pessoas para visualizar o seu artigo.
-
-Veja esse exemplo:
-
-![image](https://user-images.githubusercontent.com/28494067/192122523-5656c7c8-a30f-4f77-963b-289a84c9a89d.png)
-
-Você pode acessar essa página pelo link: https://reinanhs.github.io/limarka-template-tcc/
-
-A página seguite as especificações de metadata do [DCMI](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) para ajudar a divulgar o seu artigo e para gerar uma relevância nas pesquisas no Google e em outros buscadores.
-
-#### Página com informações resumidas
-
-Esta ferramenta também irá gerar uma tabela com informações resumidas sobre o seu artigo. Além disso, ela também vai disponibilizar um link para a visualizar seu artigo.
-
-#### Outros recursos
-
-- Botão de compartilhamento redes sociais
-- Possibilidade de criar páginas
-- Sistema de comentários
-- Site responsivo
-
-Caso você queira saber mais sobre essa ferramenta veja essa [documentação](https://github.com/ReinanHS/limarka-render-html/wiki).
-
-### O que é o Github Action <a name="head-github-action"></a>
-
-> GitHub Actions é uma plataforma de integração contínua e entrega contínua (CI/CD) que permite automatizar a sua compilação, testar e pipeline de implantação.
-
-Com essa ferramente é possivel fazer o `build` automatizado do artigo acadêmico.
+- [Limarka](https://github.com/ReinanHS/limarka-template-tcc)
+- [Marp](https://marp.app/)
+- [Docker](https://www.docker.com/)
+- [GitHub Actions](https://docs.github.com/pt/actions)
 
 ## Changelog
 
-Por favor, veja [CHANGELOG](CHANGELOG.md) para obter mais informações sobre o que mudou recentemente.
+Para obter informações sobre as últimas alterações no projeto, consulte [CHANGELOG](CHANGELOG.md).
 
-## Seja um dos contribuidores
+## Como Contribuir
 
-Quer fazer parte desse projeto? Clique AQUI e leia [como contribuir](CONTRIBUTING.md).
+Gostaria de contribuir para este projeto? Consulte nosso guia sobre [como contribuir](CONTRIBUTING.md) para começar.
 
 ## Segurança
 
-Se você descobrir algum problema relacionado à segurança, envie um e-mail para reinangabriel1520@gmail.com em vez de
-usar o issue.
+Se você identificar algum problema relacionado à segurança, entre em contato conosco por e-mail em [insira seu endereço de e-mail aqui] em vez de criar um problema no GitHub.
 
-### Licença <a name="head-Licenca"></a>
+### Licença
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
-### Créditos <a name="head-creditos"></a>
-
-A logo utilizada nesse projeto, foi retirada do site: [Flaticon](https://www.flaticon.com/br/icones-gratis/biblioteca)
+Este projeto está sob licença. Consulte o arquivo [LICENÇA](LICENSE) para obter detalhes sobre a licença.
