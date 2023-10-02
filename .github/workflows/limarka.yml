@@ -44,10 +44,13 @@ jobs:
       - name: Copy images directory (if exists)
         run: if [[ -d imagens ]]; then cp -R imagens build/imagens; fi
 
+      - name: Copy videos directory (if exists)
+        run: if [[ -d videos ]]; then cp -R videos build/videos; fi
+
       - name: Marp Build (README)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css -o build/slide.html
+          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css -o build/slide.html
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
@@ -55,7 +58,7 @@ jobs:
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pdf
+          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pdf
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
@@ -63,7 +66,7 @@ jobs:
       - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pptx
+          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pptx
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
@@ -71,7 +74,7 @@ jobs:
       - name: Archive marp artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: marp-limarka
+          name: dist-marp
           path: build
           retention-days: 1
 
@@ -82,20 +85,22 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+
       - name: Download build Limark
         uses: actions/download-artifact@v3
         with:
           name: dist-limarka
           path: build-limarka
+
       - name: Download build Marp
         uses: actions/download-artifact@v3
         with:
-          name: marp-limarka
-          path: build-marp
-      - name: Make build dir
-        run: mkdir -p build
-      - name: Show ls
-        run: ls
+          name: dist-marp
+          path: build
+
+      - name: Move file
+        run: mv ./build-limarka/xxx-trabalho-academico.pdf ./build/texto-sobre-tema.pdf
+
       - name: Deploy production
         if: ${{ github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4
