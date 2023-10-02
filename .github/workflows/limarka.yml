@@ -47,10 +47,13 @@ jobs:
       - name: Copy videos directory (if exists)
         run: if [[ -d videos ]]; then cp -R videos build/videos; fi
 
+      - name: Dowload theme
+        run: wget https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css
+
       - name: Marp Build (README)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css -o build/slide.html
+          args: slide-deck.md --theme academic.css -o build/slide.html
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
@@ -58,7 +61,7 @@ jobs:
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pdf
+          args: slide-deck.md --theme academic.css --allow-local-files -o build/README.pdf
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
@@ -66,7 +69,7 @@ jobs:
       - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v3.3.0
         with:
-          args: slide-deck.md --theme-set https://raw.githubusercontent.com/reinanhs/marp-theme-academic/main/themes/academic.css --allow-local-files -o build/README.pptx
+          args: slide-deck.md --theme academic.css --allow-local-files -o build/README.pptx
         env:
           MARP_USER: root:root
           LANG: "pt_BR.UTF-8"
