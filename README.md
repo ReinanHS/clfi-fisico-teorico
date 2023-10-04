@@ -41,7 +41,7 @@ docker run --rm --init -v "${PWD}:/home/marp/app/" -e LANG="pt_BR.UTF-8" marptea
 3. Execute o comando abaixo para gerar o texto da apresentação em PDF:
 
 ```shell
-docker run --rm --init -v "${PWD}:/usr/src/trabalho" reinanhs/limarka-help:1.0.0 bin/bash -c "limarka-help"
+docker run --rm --init -v "${PWD}:/usr/src/trabalho" reinanhs/limarka-help:1.0.0 bash -c "limarka-help"
 ```
 
 
