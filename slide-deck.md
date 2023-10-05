@@ -52,6 +52,38 @@ Este apresentação tem como objetivo lançar luz sobre a jornada de como se tor
 - Os físicos teóricos dedicam suas vidas à exploração das **fronteiras do conhecimento**.
 - Ajudam na compreensão das **partículas subatômicas** até as **leis que governam o universo**.
 - Contribuição para o avanço e surgimento de novas tecnologias.
+- Ajuda a descobrir as verdades sobre o **universo**.
+
+---
+
+<!-- _header: Elon Musk -->
+
+![bg left](https://www.ccn.com/wp-content/uploads/2023/10/crypto-supporting-elon-musk-calls-fiat-scam-still-not-accepting-bitcoin-1024x576.webp)
+
+*"Eu estava **absolutamente** obcecado pela **verdade**, simplesmente obcecado pela **verdade**."*
+
+*"E então a obsessão pela **verdade** é a razão pela qual estudei **física**, porque a física tenta compreender a **verdade**."*
+
+---
+
+<!-- _header: Elon Musk -->
+
+![bg left](https://www.ccn.com/wp-content/uploads/2023/10/crypto-supporting-elon-musk-calls-fiat-scam-still-not-accepting-bitcoin-1024x576.webp)
+
+*"**Física**, é apenas quais são as **verdades** prováveis do **universo**."*
+
+*"Então, para mim, **física** era uma coisa muito natural de estudar. Ninguém me mandou estudar. Eu era intrinsecamente interessante para entender a **natureza** do **Universo** e depois a **ciência da computação**."*
+
+---
+
+<!-- _header: Elon Musk sobre o estudo de física -->
+
+<video width="100%" height="100%" controls>
+  <source src="./videos/elon-musk-studying-physics.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+> The Physics Hub Udharbond: https://youtu.be/oZm29N_HpfI
 
 ---
 
@@ -160,6 +192,17 @@ O experimento é outra atividade importante do físico teórico. Ele testa e val
 **Por exemplo**: Ele pode observar como uma força atua na Terra para compreender como ela atua no espaço.
 
 Para ser eficiente nisso, ele precisa ter habilidade para aplicar as leis **matemáticas** em diferentes escalas.
+
+---
+
+<!-- _header: Exemplo do Oppenheimer -->
+
+<video width="100%" height="100%" controls>
+  <source src="./videos/oppenheimer.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+> Trecho do episódio número 155 do podcast Os Sócios: https://youtu.be/iZzlaqv0EXo
 
 ---
 
@@ -291,7 +334,7 @@ Os salários variam de acordo com o nível de formação, experiência profissio
 
 <!-- _header: Conclusão -->
 
-Concluímos que os **físicos teóricos**, tanto no Brasil quanto em todo o mundo. 
+Concluímos que os **físicos teóricos**, tanto no Brasil quanto em todo o mundo:
 
 - Eles são os arquitetos do conhecimento
 - Os exploradores das fronteiras do entendimento humano
